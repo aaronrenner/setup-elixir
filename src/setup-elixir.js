@@ -106,8 +106,7 @@ async function getElixirVersions() {
     .split('\n')
     .forEach(line => {
       const match =
-        line.match(/^(v\d+\.\d+\.\d+)-otp-(\d+)/) ||
-        line.match(/^([^-]+)-otp-(\d+)/)
+        line.match(/^(.+)-otp-(\d+)/)
 
       if (match) {
         const [_, version, otp] = match
